@@ -1,4 +1,13 @@
-.cardBox {
+.redCard {
+  margin: 30px;
+  display: flex;
+  color: red;
+  font-size: 8rem;
+}
+
+.blackCard {
+  margin: 30px;
+  display: flex;
   color: black;
   font-size: 8rem;
 }
