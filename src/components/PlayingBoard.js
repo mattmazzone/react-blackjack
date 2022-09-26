@@ -1,24 +1,26 @@
 import { Fragment } from "react";
 import classes from "./PlayingBoard.module.css";
 
+import DealerCard from "./DealerCard";
+
 import Card from "./Card";
 
 const PlayingBoard = (props) => {
+  const playerCardslist = props.playerCards.map((card) => {
+    return <Card key={card} value={card} />;
+  });
 
-    const dealerCards = [];
-    const playerCards = [];
-    
-
-
+  const dealerCardslist = props.dealerCards.map((card) => {
+    return <Card key={card} value={card} />;
+  });
 
   return (
     <Fragment>
       <div className={classes.dealerCards}>
-        <Card value={props.dealerCards} />
+        {dealerCardslist}
+        <DealerCard className={classes.dealerCard} />
       </div>
-      <div className={classes.dealerCards}>
-        <Card value={props.playerCards} />
-      </div>
+      <div className={classes.dealerCards}>{playerCardslist}</div>
     </Fragment>
   );
 };

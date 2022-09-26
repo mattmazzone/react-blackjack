@@ -5,9 +5,11 @@
   margin: 50px;
 }
 
-.playerCards{
-    background-color: #154f30;
-    border-radius: 25px;
-    display: flex;
-    margin: 50px;
+.playerCards {
+  background-color: #154f30;
+  border-radius: 25px;
+  display: flex;
+  margin: 50px;
 }
+
+

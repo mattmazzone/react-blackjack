@@ -76,7 +76,6 @@ export class DeckOfCards {
     this.unicodeArray = this.concatCardUnicodes();
     this.cardNames = this.concatCardNames();
     this.cardMap = this.buildMap(this.cardNames, this.unicodeArray);
-    console.log(this.cardMap);
     return this.cardMap;
   }
 }
