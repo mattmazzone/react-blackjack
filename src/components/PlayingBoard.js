@@ -20,7 +20,10 @@ const PlayingBoard = (props) => {
         {dealerCardslist}
         <DealerCard className={classes.dealerCard} />
       </div>
-      <div className={classes.dealerCards}>{playerCardslist}</div>
+      <div className={classes.playerCards}>
+        {playerCardslist}
+        <Card key={"holder"} value={"holder"}></Card>
+      </div>
     </Fragment>
   );
 };

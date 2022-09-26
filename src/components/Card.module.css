@@ -17,3 +17,12 @@
   align-items: center;
   height: 100%;
 }
+
+.holderCard {
+  margin: 30px;
+  display: flex;
+  font-size: 8rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
