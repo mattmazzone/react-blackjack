@@ -1,14 +1,15 @@
-import React from "react";
+
 import classes from "./Controls.module.css";
 
 const Controls = (props) => {
+
   return (
     <div className={classes.controlContainer}>
       <div className={classes.playerCardCount}>
-        Your Cards: {props.playerCardsAdd}
+        Your Cards: {props.playerCardsAdded}
       </div>
       <div className={classes.dealerCardCount}>
-        Dealer Cards: {props.dealerCardsAdd}
+        Dealer Cards: {props.dealerCardsAdded}
       </div>
       <button className={classes.controlButton} onClick={props.start}>
         Start Game
