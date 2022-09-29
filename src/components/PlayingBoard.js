@@ -22,7 +22,7 @@ const PlayingBoard = (props) => {
       </div>
       <div className={classes.playerCards}>
         {playerCardslist}
-        <Card key={"holder"} value={"holder"}></Card>
+        {/* <Card key={"holder"} value={"holder"}></Card> */}
       </div>
     </Fragment>
   );

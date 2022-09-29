@@ -1,9 +1,12 @@
 .dealerCard {
   margin: 30px;
+  margin-right: 0px;
   display: flex;
   color: black;
+  line-height: 80%;
+  padding-bottom: 13%;
+  letter-spacing: -3px;
+  text-indent: -3px;
+  background-color: white;
   font-size: 8rem;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }

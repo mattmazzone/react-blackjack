@@ -14,7 +14,11 @@ const Card = (props) => {
     }
   };
 
-  return <div className={CardClass()}>{cardMap.get(props.value)}</div>;
+  return (
+    <div className={classes.cardBackground}>
+      <div className={CardClass()}>{cardMap.get(props.value)}</div>
+    </div>
+  );
 };
 
 export default Card;
