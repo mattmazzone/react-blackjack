@@ -2,9 +2,13 @@
 export const CardCount = (Cards) => {
   let count = 0;
 
+  // Move aces to the back
+  Cards = moveAcesToBack(Cards);
+
   Cards.forEach((card) => {
     // Split the card type and suit and take the type
     card = card.split("-")[0];
+
     if (
       card === "Jack" ||
       card === "Queen" ||
@@ -45,4 +49,14 @@ const stringToNumber = (str) => {
   } else if (str === "Nine") {
     return 9;
   }
+};
+
+const moveAcesToBack = (Cards) => {
+  for (let i = 0; i < Cards.length; i++) {
+    if (card[i].split("-")[0] === "Ace") {
+      Cards.push(Cards.splice(index, 1)[0]);
+    }
+  }
+
+  return Cards;
 };
