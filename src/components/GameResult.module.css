@@ -1,0 +1,8 @@
+.gameResult {
+  padding: 20px;
+  background-color: #154f30;
+  border-radius: 25px;
+  display: flex;
+  margin: 50px;
+  height: 200px;;
+}

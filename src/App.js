@@ -3,6 +3,7 @@ import { Fragment, useState, useEffect } from "react";
 import PlayingBoard from "./components/PlayingBoard.js";
 import Controls from "./components/Controls.js";
 import { DeckOfCards } from "./DeckOfCards.js";
+import GameResult from "./components/GameResult.js";
 
 import { CardCount } from "./Helper/HelperFunctions.js";
 
@@ -19,15 +20,17 @@ const pickRandomCard = () => {
 function App() {
   const [dealerCards, setDealerCards] = useState([]);
   const [playerCards, setPlayerCards] = useState([]);
+
   const [playerStands, setPlayerStands] = useState(false);
   const [dealerStands, setDealerStands] = useState(false);
 
   const [playerCardCount, setPlayerCardCount] = useState(0);
   const [dealerCardCount, setDealerCardCount] = useState(0);
 
+  const [gameStatus, setGameStatus] = useState("InProgess");
+
   const hitHandler = () => {
     console.log("hit");
-
     setPlayerCards((prevState) => [...prevState, pickRandomCard()]);
   };
 
@@ -42,6 +45,7 @@ function App() {
     setDealerCards([]);
     setPlayerStands(false);
     setDealerStands(false);
+    setGameStatus("InProgess");
 
     CardDeck = new DeckOfCards().concatCardNames();
   };
@@ -79,17 +83,17 @@ function App() {
   useEffect(() => {
     console.log("checking for winner");
     if (playerCardCount > 21) {
-      console.log("player bust");
+      setGameStatus("PlayerBust");
     }
     if (dealerStands) {
       if (dealerCardCount > 21) {
-        console.log("Dealer busts! You win!");
+        setGameStatus("DealerBust");
       } else if (dealerCardCount > playerCardCount) {
-        console.log("Dealer wins!");
+        setGameStatus("DealerWins");
       } else if (dealerCardCount < playerCardCount) {
-        console.log("You win!");
-      } else {
-        console.log("It's a tie!");
+        setGameStatus("PlayerWins");
+      } else if (playerCardCount === dealerCardCount) {
+        setGameStatus("Tie");
       }
     }
   }, [dealerStands, dealerCardCount, playerCardCount]);
@@ -105,6 +109,7 @@ function App() {
         playerCardsAdded={playerCardCount}
         dealerCardsAdded={dealerCardCount}
       />
+      <GameResult status={gameStatus} />
     </Fragment>
   );
 }
