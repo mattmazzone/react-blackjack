@@ -53,8 +53,8 @@ const stringToNumber = (str) => {
 
 const moveAcesToBack = (Cards) => {
   for (let i = 0; i < Cards.length; i++) {
-    if (card[i].split("-")[0] === "Ace") {
-      Cards.push(Cards.splice(index, 1)[0]);
+    if (Cards[i].split("-")[0] === "Ace") {
+      Cards.push(Cards.splice(i, 1)[0]);
     }
   }
 
